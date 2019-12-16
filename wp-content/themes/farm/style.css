@@ -1,3 +1,7 @@
+.error404 {
+  background-color: blue;
+}
+
 /*
 Theme Name: Farm
 Theme URI: 
@@ -155,8 +159,4 @@ article {
 .staff-description {
   font-size: 0.9em;
   text-transform: initial;
-}
-
-.error404 {
-  color: cadetblue;
 }
