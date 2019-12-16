@@ -18,10 +18,6 @@
 
             ?>
         </header><!-- .entry-header -->
-        <?php if (function_exists('jetpack_breadcrumbs')) { ?>
-            <span class="screen-reader-text"><?php esc_html_e('Breadcrumb Navigation', 'farm'); ?></span>
-            <div class="breadcrumb-area"><?php jetpack_breadcrumbs(); ?></div><!-- .breadcrumb-area -->
-        <?php } ?>
 
         <?php embla_posted_on(); ?>
 
@@ -84,10 +80,12 @@
                                             }
         ?>
         <div class="entry-summary">
+
             <?php the_excerpt(); ?>
         </div>
     <?php
                                         }
     ?>
+
 
 </article><!-- #post-## -->
