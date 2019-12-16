@@ -1,9 +1,10 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
+var uglifycss = require("gulp-uglifycss");
 
 gulp.task("sass", function() {
   return gulp
-    .src("./sass/**/*.scss")
+    .src("./sass/*.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest("./css"));
 });
@@ -12,7 +13,10 @@ gulp.task("sass:watch", function() {
   gulp.watch(".sass/*.scss", ["sass"]);
 });
 
-var uglifycss = require("gulp-uglifycss");
+gulp.task("watch", function() {
+  gulp.watch("./sass/*.sass", ["sass"]);
+  gulp.watch("./css*.css"["css"]);
+});
 
 gulp.task("css", function() {
   gulp
@@ -25,10 +29,6 @@ gulp.task("css", function() {
     .pipe(gulp.dest("./dist/"));
 });
 
-gulp.task('run' ['sass', 'css']);
+gulp.task("run"[("sass", "css")]);
 
-gulp.task('watch' function(){
-    gulp.watch('./sass/*sass', ['sass']);
-    gulp.watch('./css*.css' ['css']);
-});
-gulp.task('default', ['run', 'watch']);
+gulp.task("default", ["run", "watch"]);
