@@ -1,34 +1,33 @@
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var uglifycss = require("gulp-uglifycss");
+const { src, dest, parallel } = require("gulp");
+const pug = require("gulp-pug");
+const less = require("gulp-less");
+const minifyCSS = require("gulp-csso");
+const concat = require("gulp-concat");
 
-gulp.task("sass", function() {
-  return gulp
-    .src("./sass/*.scss")
-    .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest("./css"));
-});
+function html() {
+  return src("client/templates/*.pug")
+    .pipe(pug())
+    .pipe(dest("build/html"));
+}
 
-gulp.task("sass:watch", function() {
-  gulp.watch(".sass/*.scss", ["sass"]);
-});
+function css() {
+  return src("client/templates/*.less")
+    .pipe(less())
+    .pipe(minifyCSS())
+    .pipe(dest("build/css"));
+}
 
-gulp.task("watch", function() {
-  gulp.watch("./sass/*.sass", ["sass"]);
-  gulp.watch("./css*.css"["css"]);
-});
+function js() {
+  return src("client/javascript/*.js", { sourcemaps: true })
+    .pipe(concat("app.min.js"))
+    .pipe(dest("build/js", { sourcemaps: true }));
+}
 
-gulp.task("css", function() {
-  gulp
-    .src("./styles/*.css")
-    .pipe(
-      uglifycss({
-        uglyComments: true
-      })
-    )
-    .pipe(gulp.dest("./dist/"));
-});
+exports.js = js;
+exports.css = css;
+exports.html = html;
+exports.default = parallel(html, css, js);
 
 gulp.task("run", [("sass", "css")]);
 
-gulp.task("default", ["run", "watch"]);
+gulp.task("default", [run, "watch"]);
