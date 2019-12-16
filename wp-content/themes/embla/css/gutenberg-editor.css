@@ -1,0 +1,53 @@
+a {
+	text-decoration: underline;
+}
+
+a,
+a:visited,
+.block-editor-rich-text__editable a {
+	color: #111;
+}
+
+a:hover,
+a:focus,
+a:active,
+.block-editor-rich-text__editable a:hover,
+.block-editor-rich-text__editable a:focus,
+.block-editor-rich-text__editable a:active {
+	color: #0073AA;
+	text-decoration: none;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+a img {
+	border: 0;
+}
+
+.wp-block-file a.wp-block-file__button,
+.wp-block-file a.wp-block-file__button:visited,
+.wp-block-button__link {
+    text-decoration: underline;
+}
+
+.wp-block-file a.wp-block-file__button:hover,
+.wp-block-file a.wp-block-file__button:focus,
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
+	text-decoration: none;
+}
+
+/*increase contrast*/
+.wp-block-latest-comments__comment-date,
+.wp-block-video figcaption,
+.wp-block-quote cite,
+.wp-block-audio figcaption {
+	color: #333;
+}
