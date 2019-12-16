@@ -29,6 +29,6 @@ gulp.task("css", function() {
     .pipe(gulp.dest("./dist/"));
 });
 
-gulp.task("run"[("sass", "css")]);
+gulp.task("run", [("sass", "css")]);
 
 gulp.task("default", ["run", "watch"]);
