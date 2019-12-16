@@ -11,3 +11,17 @@ gulp.task("sass", function() {
 gulp.task("sass:watch", function() {
   gulp.watch(".sass/**/*.scss", ["sass"]);
 });
+
+var uglifycss = require("gulp-uglifycss");
+
+gulp.task("css", function() {
+  gulp
+    .src("./styles/**/*/css")
+    .pipe(
+      uglifycss({
+        maxLineLen: 80,
+        uglyComments: true
+      })
+    )
+    .pipe(gulp.dest("./dist/"));
+});
