@@ -1,9 +1,9 @@
 === Embla ===
 Contributors: poena
 Requires at least: 5.0
-Tested up to: 5.2
+Tested up to: 5.3
 Requires PHP: 5.6
-Sable tag: 1.4
+Sable tag: 1.5
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2017-2019.
@@ -78,6 +78,9 @@ The Embla: Recent Comments widget shows excerpts of your most recent comments.
 The Embla: Recent Posts With Featured Images widget shows your most recent posts with featured images.
 
 == Changelog ==
+
+= 1.5- December 16 2019 =
+Fixed a problem where the icons for the menu were not loaded.
 
 = 1.4- August 10 2019 =
 Fixed a problem with the custom recent comments widget.

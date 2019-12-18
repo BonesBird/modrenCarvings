@@ -1,3 +1,4 @@
-.error404 {
-  background-color: red;
+.main-navigation ul ul,
+body {
+  background: red;
 }
